@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F946124F9F5063E2EEA5267 /* Pods_FireSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6737128A20AF979BE2AE1E86 /* Pods_FireSocial.framework */; };
 		FABDC2D01EA9095E00E11D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC2CF1EA9095E00E11D40 /* AppDelegate.swift */; };
 		FABDC2D21EA9095E00E11D40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC2D11EA9095E00E11D40 /* ViewController.swift */; };
 		FABDC2D51EA9095E00E11D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABDC2D31EA9095E00E11D40 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BBEBE3C54A93CE2FBB71C26 /* Pods-FireSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial.release.xcconfig"; sourceTree = "<group>"; };
+		6737128A20AF979BE2AE1E86 /* Pods_FireSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABDC2CC1EA9095E00E11D40 /* FireSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABDC2CF1EA9095E00E11D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABDC2D11EA9095E00E11D40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		FABDC2D61EA9095E00E11D40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FABDC2D91EA9095E00E11D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FABDC2DB1EA9095E00E11D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB72669E16477A85B714407D /* Pods-FireSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F946124F9F5063E2EEA5267 /* Pods_FireSocial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		903C9E1CA0CC2736FA5BB9A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6737128A20AF979BE2AE1E86 /* Pods_FireSocial.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC81621D60514CF9264D1504 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB72669E16477A85B714407D /* Pods-FireSocial.debug.xcconfig */,
+				4BBEBE3C54A93CE2FBB71C26 /* Pods-FireSocial.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FABDC2C31EA9095E00E11D40 = {
 			isa = PBXGroup;
 			children = (
 				FABDC2CE1EA9095E00E11D40 /* FireSocial */,
 				FABDC2CD1EA9095E00E11D40 /* Products */,
+				CC81621D60514CF9264D1504 /* Pods */,
+				903C9E1CA0CC2736FA5BB9A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FABDC2DE1EA9095E00E11D40 /* Build configuration list for PBXNativeTarget "FireSocial" */;
 			buildPhases = (
+				18DFEA8AD7895AFFF35505A4 /* [CP] Check Pods Manifest.lock */,
 				FABDC2C81EA9095E00E11D40 /* Sources */,
 				FABDC2C91EA9095E00E11D40 /* Frameworks */,
 				FABDC2CA1EA9095E00E11D40 /* Resources */,
+				AD39739CB09D5DFD18FB4F5E /* [CP] Embed Pods Frameworks */,
+				73EB10201F8D212747B9B26E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18DFEA8AD7895AFFF35505A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		73EB10201F8D212747B9B26E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD39739CB09D5DFD18FB4F5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FABDC2C81EA9095E00E11D40 /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		FABDC2DF1EA9095E00E11D40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB72669E16477A85B714407D /* Pods-FireSocial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 243DK6F34T;
@@ -274,6 +350,7 @@
 		};
 		FABDC2E01EA9095E00E11D40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BBEBE3C54A93CE2FBB71C26 /* Pods-FireSocial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 243DK6F34T;
