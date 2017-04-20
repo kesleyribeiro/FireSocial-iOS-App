@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FABDC2D01EA9095E00E11D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC2CF1EA9095E00E11D40 /* AppDelegate.swift */; };
+		FABDC2D21EA9095E00E11D40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC2D11EA9095E00E11D40 /* ViewController.swift */; };
+		FABDC2D51EA9095E00E11D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABDC2D31EA9095E00E11D40 /* Main.storyboard */; };
+		FABDC2D71EA9095E00E11D40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABDC2D61EA9095E00E11D40 /* Assets.xcassets */; };
+		FABDC2DA1EA9095E00E11D40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABDC2D81EA9095E00E11D40 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FABDC2CC1EA9095E00E11D40 /* FireSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABDC2CF1EA9095E00E11D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FABDC2D11EA9095E00E11D40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FABDC2D41EA9095E00E11D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FABDC2D61EA9095E00E11D40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FABDC2D91EA9095E00E11D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FABDC2DB1EA9095E00E11D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FABDC2C91EA9095E00E11D40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FABDC2C31EA9095E00E11D40 = {
+			isa = PBXGroup;
+			children = (
+				FABDC2CE1EA9095E00E11D40 /* FireSocial */,
+				FABDC2CD1EA9095E00E11D40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FABDC2CD1EA9095E00E11D40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FABDC2CC1EA9095E00E11D40 /* FireSocial.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FABDC2CE1EA9095E00E11D40 /* FireSocial */ = {
+			isa = PBXGroup;
+			children = (
+				FABDC2CF1EA9095E00E11D40 /* AppDelegate.swift */,
+				FABDC2D11EA9095E00E11D40 /* ViewController.swift */,
+				FABDC2D31EA9095E00E11D40 /* Main.storyboard */,
+				FABDC2D61EA9095E00E11D40 /* Assets.xcassets */,
+				FABDC2D81EA9095E00E11D40 /* LaunchScreen.storyboard */,
+				FABDC2DB1EA9095E00E11D40 /* Info.plist */,
+			);
+			path = FireSocial;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FABDC2CB1EA9095E00E11D40 /* FireSocial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABDC2DE1EA9095E00E11D40 /* Build configuration list for PBXNativeTarget "FireSocial" */;
+			buildPhases = (
+				FABDC2C81EA9095E00E11D40 /* Sources */,
+				FABDC2C91EA9095E00E11D40 /* Frameworks */,
+				FABDC2CA1EA9095E00E11D40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FireSocial;
+			productName = FireSocial;
+			productReference = FABDC2CC1EA9095E00E11D40 /* FireSocial.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FABDC2C41EA9095E00E11D40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Kesley Ribeiro";
+				TargetAttributes = {
+					FABDC2CB1EA9095E00E11D40 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 243DK6F34T;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FABDC2C71EA9095E00E11D40 /* Build configuration list for PBXProject "FireSocial" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FABDC2C31EA9095E00E11D40;
+			productRefGroup = FABDC2CD1EA9095E00E11D40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FABDC2CB1EA9095E00E11D40 /* FireSocial */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FABDC2CA1EA9095E00E11D40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABDC2DA1EA9095E00E11D40 /* LaunchScreen.storyboard in Resources */,
+				FABDC2D71EA9095E00E11D40 /* Assets.xcassets in Resources */,
+				FABDC2D51EA9095E00E11D40 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FABDC2C81EA9095E00E11D40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABDC2D21EA9095E00E11D40 /* ViewController.swift in Sources */,
+				FABDC2D01EA9095E00E11D40 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FABDC2D31EA9095E00E11D40 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FABDC2D41EA9095E00E11D40 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FABDC2D81EA9095E00E11D40 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FABDC2D91EA9095E00E11D40 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FABDC2DC1EA9095E00E11D40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FABDC2DD1EA9095E00E11D40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FABDC2DF1EA9095E00E11D40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 243DK6F34T;
+				INFOPLIST_FILE = FireSocial/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.kesleyribeiro.FireSocial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FABDC2E01EA9095E00E11D40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 243DK6F34T;
+				INFOPLIST_FILE = FireSocial/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.kesleyribeiro.FireSocial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FABDC2C71EA9095E00E11D40 /* Build configuration list for PBXProject "FireSocial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABDC2DC1EA9095E00E11D40 /* Debug */,
+				FABDC2DD1EA9095E00E11D40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FABDC2DE1EA9095E00E11D40 /* Build configuration list for PBXNativeTarget "FireSocial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABDC2DF1EA9095E00E11D40 /* Debug */,
+				FABDC2E01EA9095E00E11D40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FABDC2C41EA9095E00E11D40 /* Project object */;
+}
