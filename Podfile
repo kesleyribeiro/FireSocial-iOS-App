@@ -8,6 +8,7 @@ target 'FireSocial' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage' 
   pod 'FBSDKLoginKit'
-  #pod 'SwiftKeychainWrapper'
+  pod 'UITextField-Navigation', '~> 1.4.3'
+  pod 'SwiftKeychainWrapper'
 
 end

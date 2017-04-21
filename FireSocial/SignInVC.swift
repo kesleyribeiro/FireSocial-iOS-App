@@ -7,21 +7,132 @@
 //
 
 import UIKit
+import UITextField_Navigation
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import SwiftKeychainWrapper
 
-class SignInVC: UIViewController {
+extension SignInVC: UITextFieldNavigationDelegate {
+    
+    // explicitly protocol conforming declaration
+    private func textFieldNavigationDidTapPreviousButton(_ textField: UITextField) {
+        textField.previousTextField?.becomeFirstResponder()
+    }
+    
+    private func textFieldNavigationDidTapNextButton(_ textField: UITextField) {
+        textField.nextTextField?.becomeFirstResponder()
+    }
+    
+    private func textFieldNavigationDidTapDoneButton(_ textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+}
 
+class SignInVC: UIViewController, UITextFieldDelegate {
+
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var myViewHeader: UIView!
     @IBOutlet weak var myViewFooter: UIView!
+    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var pwdTxt: UITextField!
+    @IBOutlet weak var signInBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         myView.layer.cornerRadius = 10
         myViewHeader.round(corners: [.topLeft, .topRight], radius: 10)
         myViewFooter.round(corners: [.bottomLeft, .bottomRight], radius: 10)
+
+        // Begin the button inactive
+        signInBtn.isEnabled = false
+        signInBtn.alpha = 0.3
+
+        // Modifica a aparência do TextFieldNavigationTooBar e TextFieldNavigationTooBarButtonItem
+        UITextFieldNavigationToolbar.appearance().barStyle = .black
+        UITextFieldNavigationToolbar.appearance().barTintColor = UIColor(red: 20/255, green: 151/255, blue: 153/255, alpha: 1)
+        UITextFieldNavigationToolbarButtonItem.appearance().tintColor = UIColor.white
+
+        // Cria a notificação para quando teclado aparecer
+        NotificationCenter.default.addObserver(self, selector: #selector(SignInVC.keyboardAppeared(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
+        // Cria a notificação para quando teclado desaparecer
+        NotificationCenter.default.addObserver(self, selector: #selector(SignInVC.keyboardDisappeared(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+
+        // Add target to execute function in textfield
+        emailTxt.addTarget(self, action: #selector(SignInVC.textFieldDidChange(_:)), for: .editingChanged)
+        pwdTxt.addTarget(self, action: #selector(SignInVC.textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            print("[SUCCESS] ID found in keychain")
+            performSegue(withIdentifier: "showFeed", sender: nil)
+        }
+    }
+    
+    // If some information in textfiel was modified
+    func textFieldDidChange(_ textField : UITextView) {
+        
+        // If textfield is empty - inactivate Save button
+        if emailTxt.text!.isEmpty || pwdTxt.text!.isEmpty || pwdTxt.text!.characters.count < 8 {
+            
+            signInBtn.isEnabled = false
+            signInBtn.alpha = 0.3
+
+        }// If textfield was modified - activate Save button
+        else {
+            signInBtn.isEnabled = true
+            signInBtn.alpha = 1
+        }
+    }
+    
+    @IBAction func signInBtn(_ sender: Any) {
+        
+        if let email = emailTxt.text, let psw = pwdTxt.text {
+            
+            FIRAuth.auth()?.signIn(withEmail: email, password: psw, completion: { (user, error) in
+                if error == nil {
+                    print("\n[SUCCESS] Email user authenticated with Firebase")
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
+                } else {
+                    FIRAuth.auth()?.createUser(withEmail: email, password: psw, completion: { (user, error) in
+                        if error != nil {
+                            print("[ERROR] Unable to authenticate with Firebase using email - \(String(describing: error))")
+                        } else {
+                            print("[SUCCESS] Successfully authenticated with Firebase")
+                            if let user = user {
+                                self.completeSignIn(id: user.uid)
+                            }
+                        }
+                    })
+                }
+            })
+        }
+    }
+
+    func firebaseAuthenticate(_ credential: FIRAuthCredential) {
+        
+        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+            if error != nil {
+                print("[ERROR] Unable to authenticate with Firebase - \(String(describing: error))")
+            } else {
+                print("[SUCCESS] Successfully authenticated with Firebase")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
+            }
+        })
+    }
+
+    func completeSignIn(id: String) {
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("[SUCCESS] Data saved to keychain: \(keychainResult)")
+        performSegue(withIdentifier: "showFeed", sender: nil)
     }
     
     @IBAction func facebookBtn(_ sender: Any) {
@@ -29,7 +140,6 @@ class SignInVC: UIViewController {
         let facebookLogin = FBSDKLoginManager()
         
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
-            
             if error != nil {
                 print("[ERROR] Unable to authenticate with Facebook - \(String(describing: error))")
             } else if result?.isCancelled == true {
@@ -42,16 +152,43 @@ class SignInVC: UIViewController {
         }
     }
     
-    func firebaseAuthenticate(_ credential: FIRAuthCredential) {
+    // Método para receber a notificação quando o teclado aparecer
+    func keyboardAppeared(_ notificacao: Notification) {
         
-        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
-            if error != nil {
-                print("[ERROR] Unable to authenticate with Firebase - \(String(describing: error))")
-            } else {
-                print("[SUCCESS] Successfully authenticated with Firebase")
-                
-            }
-        })
+        if (((notificacao as Notification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+
+            // Desloca a posição da tela para -50 pixels em y
+            self.view.frame.origin.y = 0
+            self.mainView.frame.origin.y = 0
+            self.myView.frame.origin.y = 0
+            self.myViewHeader.frame.origin.y = 0
+            self.myViewFooter.frame.origin.y = 0
+
+            self.view.frame.origin.y -= 200
+            self.mainView.frame.origin.y -= 200
+            self.myView.frame.origin.y -= 200
+            self.myViewHeader.frame.origin.y -= 200
+            self.myViewFooter.frame.origin.y -= 200
+        }
+    }
+    
+    // Método para receber a notificação quando o teclado desaparecer
+    func keyboardDisappeared(_ notificacao: Notification) {
+
+        if (((notificacao as Notification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+
+            // Descola a tela para a posição padrão em y
+            self.view.frame.origin.y = 0
+            self.mainView.frame.origin.y = 0
+            self.myView.frame.origin.y = 0
+            self.myViewHeader.frame.origin.y = 0
+            self.myViewFooter.frame.origin.y = 0
+        }
+    }
+
+    // Hide keyboard when user touch in view
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }

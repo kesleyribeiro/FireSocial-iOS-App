@@ -41,6 +41,11 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>UITextField-Navigation.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -50,6 +55,11 @@
 			<true/>
 		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>43FD84912DA84A1231EDEDE495ED25F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -94,12 +104,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C71D93CDCB69EEBAA41D30A67A7A44F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DBCFE340078BDFEFFAD0EF2459E0DD2B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>ECAA40A8AFF410EBF292BF7B0BE2E2BA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EF7AF300CD0630449BB863CA9EC1858C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7B5695EBD672502C6845CF9796C1C4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8C265DD02120CB7171E4B216DD52445</key>
 		<dict>
 			<key>primary</key>
 			<true/>

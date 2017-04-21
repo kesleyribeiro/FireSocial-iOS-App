@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '57318E554F004748AF56B1D7970E0FEF'
+               BlueprintIdentifier = 'ECAA40A8AFF410EBF292BF7B0BE2E2BA'
                BlueprintName = 'Pods-FireSocial'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods-FireSocial.framework'>

@@ -12,6 +12,7 @@ import FBSDKLoginKit
 
 // Global var
 let SHADOW_GRAY: CGFloat = 80/255
+let KEY_UID = "uid"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
