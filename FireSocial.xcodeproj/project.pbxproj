@@ -14,6 +14,7 @@
 		FA0610951EA99BA500DD68E1 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0610941EA99BA500DD68E1 /* FeedVC.swift */; };
 		FA0610971EAA44E300DD68E1 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0610961EAA44E300DD68E1 /* PostCell.swift */; };
 		FA06109A1EAA5AAC00DD68E1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0610991EAA5AAC00DD68E1 /* DataService.swift */; };
+		FA06109C1EAA7E6700DD68E1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06109B1EAA7E6700DD68E1 /* Post.swift */; };
 		FABDC2D01EA9095E00E11D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC2CF1EA9095E00E11D40 /* AppDelegate.swift */; };
 		FABDC2D51EA9095E00E11D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABDC2D31EA9095E00E11D40 /* Main.storyboard */; };
 		FABDC2D71EA9095E00E11D40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABDC2D61EA9095E00E11D40 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		FA0610941EA99BA500DD68E1 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		FA0610961EAA44E300DD68E1 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		FA0610991EAA5AAC00DD68E1 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		FA06109B1EAA7E6700DD68E1 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FABDC2CC1EA9095E00E11D40 /* FireSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABDC2CF1EA9095E00E11D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABDC2D41EA9095E00E11D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		FA0610871EA9145200DD68E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA06109B1EAA7E6700DD68E1 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				FA06108B1EA92EE800DD68E1 /* SignInVC.swift in Sources */,
 				FA06109A1EAA5AAC00DD68E1 /* DataService.swift in Sources */,
 				FABDC2D01EA9095E00E11D40 /* AppDelegate.swift in Sources */,
+				FA06109C1EAA7E6700DD68E1 /* Post.swift in Sources */,
 				FA0610971EAA44E300DD68E1 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
