@@ -12,6 +12,8 @@
 		FA06108B1EA92EE800DD68E1 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06108A1EA92EE800DD68E1 /* SignInVC.swift */; };
 		FA0610921EA9424B00DD68E1 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0610911EA9424B00DD68E1 /* CustomView.swift */; };
 		FA0610951EA99BA500DD68E1 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0610941EA99BA500DD68E1 /* FeedVC.swift */; };
+		FA0610971EAA44E300DD68E1 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0610961EAA44E300DD68E1 /* PostCell.swift */; };
+		FA06109A1EAA5AAC00DD68E1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0610991EAA5AAC00DD68E1 /* DataService.swift */; };
 		FABDC2D01EA9095E00E11D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC2CF1EA9095E00E11D40 /* AppDelegate.swift */; };
 		FABDC2D51EA9095E00E11D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABDC2D31EA9095E00E11D40 /* Main.storyboard */; };
 		FABDC2D71EA9095E00E11D40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABDC2D61EA9095E00E11D40 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		FA0610911EA9424B00DD68E1 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		FA0610931EA9571200DD68E1 /* FireSocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FireSocial.entitlements; sourceTree = "<group>"; };
 		FA0610941EA99BA500DD68E1 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		FA0610961EAA44E300DD68E1 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		FA0610991EAA5AAC00DD68E1 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		FABDC2CC1EA9095E00E11D40 /* FireSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABDC2CF1EA9095E00E11D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABDC2D41EA9095E00E11D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0610911EA9424B00DD68E1 /* CustomView.swift */,
+				FA0610961EAA44E300DD68E1 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -86,6 +91,14 @@
 				FA0610941EA99BA500DD68E1 /* FeedVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		FA0610981EAA5A9900DD68E1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA0610991EAA5AAC00DD68E1 /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		FABDC2C31EA9095E00E11D40 = {
@@ -110,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				FABDC2CF1EA9095E00E11D40 /* AppDelegate.swift */,
+				FA0610981EAA5A9900DD68E1 /* Services */,
 				FA0610871EA9145200DD68E1 /* Model */,
 				FA0610891EA9146200DD68E1 /* Controller */,
 				FA0610881EA9145D00DD68E1 /* View */,
@@ -256,7 +270,9 @@
 				FA0610951EA99BA500DD68E1 /* FeedVC.swift in Sources */,
 				FA0610921EA9424B00DD68E1 /* CustomView.swift in Sources */,
 				FA06108B1EA92EE800DD68E1 /* SignInVC.swift in Sources */,
+				FA06109A1EAA5AAC00DD68E1 /* DataService.swift in Sources */,
 				FABDC2D01EA9095E00E11D40 /* AppDelegate.swift in Sources */,
+				FA0610971EAA44E300DD68E1 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
