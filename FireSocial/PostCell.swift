@@ -10,6 +10,8 @@ import UIKit
 
 class PostCell: UITableViewCell {
 
+    var post: Post!
+
     @IBOutlet var postView: UIView!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var usernameLbl: UILabel!
@@ -23,5 +25,11 @@ class PostCell: UITableViewCell {
         postView.layer.cornerRadius = 5.0
         profileImg.layer.cornerRadius = profileImg.frame.width / 2
         postImg.layer.cornerRadius = 5.0
-    }    
+    }
+    
+    func configureCell(post: Post) {
+        self.post = post
+        self.caption.text = post.caption
+        self.likesLbl.text = "\(post.likes)"
+    }
 }
