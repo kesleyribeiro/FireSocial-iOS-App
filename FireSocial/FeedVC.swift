@@ -14,8 +14,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableFeed: UITableView!
     @IBOutlet var optionsView: UIView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +22,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableFeed.delegate = self
         tableFeed.dataSource = self
+        
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            print(snapshot)
+        })
     }
 
     @IBAction func signOutBtn(_ sender: Any) {
