@@ -15,10 +15,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     var posts = [Post]()
     var postImagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
-
+    var imageSelected = false
+    
     @IBOutlet weak var tableFeed: UITableView!
     @IBOutlet weak var optionsView: UIView!
     @IBOutlet weak var addImage: UIImageView!
+    @IBOutlet weak var captionField: UITextField!
+    @IBOutlet weak var postBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             addImage.image = image
+            imageSelected = true
         } else {
             print("[POST] A valid image wasn't selected")
         }
@@ -61,6 +65,57 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 
     @IBAction func addPostImage(_ sender: Any) {
         present(postImagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func postBtm(_ sender: Any) {
+        
+        guard let caption = captionField.text, caption != "" else {
+            print("[SUCCESS] Caption must be entered")
+            return
+        }
+        
+        guard let img = addImage.image, imageSelected == true else {
+            print("[SUCCESS] An image must be selected")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            
+            let imgUid = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGE.child(imgUid).put(imgData, metadata: metadata) {(metadata, error) in
+            
+                if error != nil {
+                    print("[ERROR] Unable to upload image to Firebase storage")
+                } else {
+                    print("[SUCCESS] Successfully uploaded image to Firebase storage")
+                    let downloadUrl = metadata?.downloadURL()?.absoluteString
+                    
+                    if let url = downloadUrl {
+                        self.postToFirebase(imgUrl: url)
+                    }
+                }
+            }
+        }
+    }
+
+    func postToFirebase(imgUrl: String) {
+        let post: Dictionary<String, AnyObject> = [
+            "caption": captionField.text! as AnyObject,
+            "imageUrl": imgUrl as AnyObject,
+            "likes": 0 as AnyObject
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        addImage.image = UIImage(named: "Camera-icon")
+        
+        tableFeed.reloadData()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,6 +146,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 
     @IBAction func signOutBtn(_ sender: Any) {
 
+        // let keychainResult = KeychainWrapper.defaultKeychainWrapper.remove(key: KEY_UID)
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("[SUCCESS] ID removed from keychain: \(keychainResult)")
         try! FIRAuth.auth()?.signOut()

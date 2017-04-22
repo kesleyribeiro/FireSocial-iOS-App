@@ -207,7 +207,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.69197851420000001" blue="0.94273251300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0029149907640000001" green="0.65259832139999996" blue="0.66626012329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="cYw-qm-ADT" firstAttribute="leading" secondItem="Tyf-1z-U1G" secondAttribute="leading" constant="16" id="2Va-bK-rPF"/>
                                     <constraint firstItem="cYw-qm-ADT" firstAttribute="top" secondItem="Tyf-1z-U1G" secondAttribute="top" constant="25" id="Ghe-lp-tQj"/>
@@ -246,11 +246,14 @@
                                                     <constraint firstAttribute="width" constant="54" id="gZ2-mF-PaE"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="Send-icon"/>
+                                                <connections>
+                                                    <action selector="postBtm:" destination="mLh-I7-kBr" eventType="touchUpInside" id="clX-lE-H7w"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.69197851420000001" blue="0.94273251300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0029149907640000001" green="0.65259832139999996" blue="0.66626012329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="D6G-7Y-A3o" secondAttribute="bottom" constant="8" id="JEW-mn-TtY"/>
                                     <constraint firstItem="D6G-7Y-A3o" firstAttribute="top" secondItem="Bou-E0-GEN" secondAttribute="top" constant="8" id="M4s-E4-DoD"/>
@@ -388,7 +391,9 @@
                     </view>
                     <connections>
                         <outlet property="addImage" destination="WVn-nV-Vn0" id="dmU-0u-xnF"/>
+                        <outlet property="captionField" destination="9Ip-hS-xgG" id="zyk-VL-Xgx"/>
                         <outlet property="optionsView" destination="Bou-E0-GEN" id="0mF-eK-lmS"/>
+                        <outlet property="postBtn" destination="spE-BF-HfP" id="Y2Z-fB-fxk"/>
                         <outlet property="tableFeed" destination="Gwe-cr-DKi" id="rRO-F6-cWb"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showSignIn" id="c03-jq-jS4"/>
                     </connections>
