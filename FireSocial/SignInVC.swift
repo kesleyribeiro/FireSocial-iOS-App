@@ -50,15 +50,15 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         signInBtn.isEnabled = false
         signInBtn.alpha = 0.3
 
-        // Modifica a aparência do TextFieldNavigationTooBar e TextFieldNavigationTooBarButtonItem
+        // Modifies the appearance of the TextFieldNavigationTooBar and TextFieldNavigationTooBarButtonItem
         UITextFieldNavigationToolbar.appearance().barStyle = .black
         UITextFieldNavigationToolbar.appearance().barTintColor = UIColor(red: 20/255, green: 151/255, blue: 153/255, alpha: 1)
         UITextFieldNavigationToolbarButtonItem.appearance().tintColor = UIColor.white
 
-        // Cria a notificação para quando teclado aparecer
+        // Create a notification when show the keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(SignInVC.keyboardAppeared(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
-        // Cria a notificação para quando teclado desaparecer
+        // Create a notification when hidden the keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(SignInVC.keyboardDisappeared(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
 
         // Add target to execute function in textfield
@@ -144,7 +144,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     @IBAction func facebookBtn(_ sender: Any) {
     
         let facebookLogin = FBSDKLoginManager()
-        
+
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
                 print("[ERROR] Unable to authenticate with Facebook - \(String(describing: error))")
@@ -158,12 +158,12 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Método para receber a notificação quando o teclado aparecer
+    // To received the notification when show the keyboard
     func keyboardAppeared(_ notificacao: Notification) {
         
         if (((notificacao as Notification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
 
-            // Desloca a posição da tela para -50 pixels em y
+            // Update the position of the view
             self.view.frame.origin.y = 0
             self.mainView.frame.origin.y = 0
             self.myView.frame.origin.y = 0
@@ -178,12 +178,12 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Método para receber a notificação quando o teclado desaparecer
+    // To received the notification when hidden the keyboard
     func keyboardDisappeared(_ notificacao: Notification) {
 
         if (((notificacao as Notification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
 
-            // Descola a tela para a posição padrão em y
+            // Update the position of the view
             self.view.frame.origin.y = 0
             self.mainView.frame.origin.y = 0
             self.myView.frame.origin.y = 0
@@ -192,7 +192,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         }
     }
 
-    // Hide keyboard when user touch in view
+    // Hidden keyboard when user touch in view
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

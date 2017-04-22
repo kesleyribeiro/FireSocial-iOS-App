@@ -21,26 +21,28 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var optionsView: UIView!
     @IBOutlet weak var addImage: UIImageView!
     @IBOutlet weak var captionField: UITextField!
-    @IBOutlet weak var postBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableFeed.delegate = self
+        tableFeed.dataSource = self
+
         optionsView.layer.cornerRadius = 5.0
         addImage.layer.cornerRadius = 5.0
         addImage.clipsToBounds = true
-        
-        tableFeed.delegate = self
-        tableFeed.dataSource = self
         
         postImagePicker = UIImagePickerController()
         postImagePicker.allowsEditing = true
         postImagePicker.delegate = self
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            
+            self.posts = [] // This is the new line
+
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
-                    //print("[SNAP] \(snap)")
+                    print("[SNAP] \(snap)")
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
@@ -50,6 +52,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             }
             self.tableFeed.reloadData()
         })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableFeed.reloadData()
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -102,6 +109,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
 
     func postToFirebase(imgUrl: String) {
+
         let post: Dictionary<String, AnyObject> = [
             "caption": captionField.text! as AnyObject,
             "imageUrl": imgUrl as AnyObject,
@@ -134,11 +142,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 
             if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
                 cell.configureCell(post: post, img: img)
-                return cell
             } else {
                 cell.configureCell(post: post)
-                return cell
             }
+            return cell
         } else {
             return PostCell()
         }
@@ -146,7 +153,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 
     @IBAction func signOutBtn(_ sender: Any) {
 
-        // let keychainResult = KeychainWrapper.defaultKeychainWrapper.remove(key: KEY_UID)
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("[SUCCESS] ID removed from keychain: \(keychainResult)")
         try! FIRAuth.auth()?.signOut()

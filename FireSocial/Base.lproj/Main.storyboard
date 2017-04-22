@@ -289,7 +289,7 @@
                                                                                 <constraint firstAttribute="width" constant="60" id="fM8-VG-wLM"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KesleyRibeiro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDV-hi-eJy">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kesley Ribeiro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDV-hi-eJy">
                                                                             <rect key="frame" x="65" y="19.5" width="172" height="21.5"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                             <color key="textColor" red="0.0029149907640000001" green="0.65259832139999996" blue="0.66626012329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -365,9 +365,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="caption" destination="hL1-nm-0QT" id="Rfk-VY-w6R"/>
+                                            <outlet property="likeImg" destination="8pG-yg-bKa" id="XBs-Y9-qnk"/>
                                             <outlet property="likesLbl" destination="26P-Gp-xbf" id="Nbd-a3-vX7"/>
                                             <outlet property="postImg" destination="Gtt-uX-wm4" id="zi4-Cg-GZl"/>
-                                            <outlet property="postView" destination="Zrs-Od-fH6" id="PER-Z6-4uS"/>
                                             <outlet property="profileImg" destination="pZC-R1-3O1" id="zAt-uu-WpY"/>
                                             <outlet property="usernameLbl" destination="jDV-hi-eJy" id="FP0-Sv-DqU"/>
                                         </connections>
@@ -393,7 +393,6 @@
                         <outlet property="addImage" destination="WVn-nV-Vn0" id="dmU-0u-xnF"/>
                         <outlet property="captionField" destination="9Ip-hS-xgG" id="zyk-VL-Xgx"/>
                         <outlet property="optionsView" destination="Bou-E0-GEN" id="0mF-eK-lmS"/>
-                        <outlet property="postBtn" destination="spE-BF-HfP" id="Y2Z-fB-fxk"/>
                         <outlet property="tableFeed" destination="Gwe-cr-DKi" id="rRO-F6-cWb"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showSignIn" id="c03-jq-jS4"/>
                     </connections>
