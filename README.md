@@ -11,7 +11,7 @@ See the video to understand the app:
 
 Screenshots:
 
-<h1>Image 1</h1>
+<h2>Image 1<h2>
 ![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/1.png)
 
 ![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/2.png)
