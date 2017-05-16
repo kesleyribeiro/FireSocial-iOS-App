@@ -11,4 +11,29 @@ See the video to understand the app:
 
 Screenshots:
 
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/1.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/2.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/3.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/4.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/5.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/6.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/7.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/8.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/9.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/10.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/11.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/12.png)
+
+![alt tag](https://github.com/kesleyribeiro/FireSocial-iOS-App/blob/master/ScreenShots/13.png)
 
